@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>tutors</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="top-section">
+    <button class="filter-button">Select Filter</button>
+  </div>
+
+  <ion-list>
+    <!-- Use *ngFor to iterate through tutors and generate items -->
+    <ion-item button *ngFor="let item of tutors" [routerLink]="['/tutors', item.id]">
+      <ion-avatar slot="start">
+        <img [src]="item.profileImageURL" alt="Tutor Image" />
+      </ion-avatar>
+      <div>
+        <h2>{{ item.name }}</h2>
+        <p>{{ item.professionalExperience }}</p>
+        <p>{{ item.qualification }}</p>
+      </div>
+    </ion-item>
+  </ion-list>
+
+  <!-- Commented out infinite scroll for now, as it's not related to routing -->
+  <!-- <ion-infinite-scroll (ionInfinite)="loadMore($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data..."
+    ></ion-infinite-scroll-content>
+  </ion-infinite-scroll> -->
+</ion-content>

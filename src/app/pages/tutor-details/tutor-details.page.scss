@@ -1,0 +1,38 @@
+ion-header {
+    ion-toolbar {
+      --background: #f8f9fa; /* Set header background color */
+      ion-title {
+        font-size: 18px;
+        font-weight: bold;
+      }
+    }
+  }
+  
+  ion-content {
+    ion-card {
+      margin: 16px;
+      ion-card-header {
+        ion-card-title {
+          font-size: 24px;
+          font-weight: bold;
+        }
+        ion-card-subtitle {
+          font-size: 16px;
+          color: #777;
+        }
+        ion-text {
+          font-size: 14px;
+          color: #333;
+          margin-top: 8px;
+        }
+      }
+      ion-card-content {
+        ion-label {
+          color: #555;
+          font-size: 14px;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+  

@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>{{ tutor?.id }}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tutors"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="profile-section">
+    <ion-img *ngIf="tutor" [src]="tutor.profileImageURL" alt="Tutor Image"></ion-img>
+  </div>
+
+  <div class="info-section">
+    <h2>{{ tutor?.name }}</h2>
+    <p><strong>Specialist In:</strong> {{ tutor?.specialistIn }}</p>
+  </div>
+
+  <ion-card class="tutor-summary-card">
+    <ion-card-header>
+      <ion-card-title>tutor Summary</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>Experience:</strong> {{ tutor?.experience }}</p>
+      <p><strong>Total Meetings:</strong> {{ tutor?.totalMeetings }}</p>
+      <p><strong>Qualification:</strong> {{ tutor?.qualification }}</p>
+      <p><strong>Professional Experience:</strong> {{ tutor?.professionalExperience }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <div class="about-tutor">
+    <ion-img *ngIf="tutor" [src]="tutor.profileImageURL" alt="Tutor Image"></ion-img>
+    <p>{{ tutor?.aboutMentor }}</p>
+  </div>
+</ion-content>
