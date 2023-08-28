@@ -39,9 +39,9 @@ export class TutorDetailsPage implements OnInit {
   ngOnInit() {
     // Get the tutor ID from the route parameters
     this.route.params.subscribe(params => {
-      console.log('Route Params:', params);
-      const tutorId = params['id']; // Assuming the parameter name is 'id'
-
+      const tutorId = params['id'];
+      console.log('Tutor ID:', tutorId);
+  
       // Find the tutor with the matching ID from the sampleTutor array
       this.tutor = sampleTutor.find(tutor => tutor.id === tutorId);
     });

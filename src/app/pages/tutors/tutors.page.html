@@ -11,7 +11,7 @@
 
   <ion-list>
     <!-- Use *ngFor to iterate through tutors and generate items -->
-    <ion-item button *ngFor="let item of tutors" [routerLink]="['/tutors', item.id]">
+    <ion-item button *ngFor="let item of tutors" [routerLink]="['/tutor', item.id]">
       <ion-avatar slot="start">
         <img [src]="item.profileImageURL" alt="Tutor Image" />
       </ion-avatar>

@@ -1,38 +1,31 @@
-ion-header {
-    ion-toolbar {
-      --background: #f8f9fa; /* Set header background color */
-      ion-title {
-        font-size: 18px;
-        font-weight: bold;
-      }
+.profile-section {
+    display: flex;
+    justify-content: center;
+    padding: 16px;
+  }
+  
+  .info-section {
+    text-align: center;
+    padding: 16px;
+    h2 {
+      font-weight: bold;
     }
   }
   
-  ion-content {
-    ion-card {
-      margin: 16px;
-      ion-card-header {
-        ion-card-title {
-          font-size: 24px;
-          font-weight: bold;
-        }
-        ion-card-subtitle {
-          font-size: 16px;
-          color: #777;
-        }
-        ion-text {
-          font-size: 14px;
-          color: #333;
-          margin-top: 8px;
-        }
-      }
-      ion-card-content {
-        ion-label {
-          color: #555;
-          font-size: 14px;
-          line-height: 1.5;
-        }
-      }
+  .tutor-summary-card {
+    margin: 16px;
+  }
+  
+  .about-tutor {
+    padding: 16px;
+    ion-img {
+      display: block;
+      margin: 0 auto;
+    }
+    p {
+      font-size: 16px;
+      line-height: 1.5;
+      color: #555;
     }
   }
   
