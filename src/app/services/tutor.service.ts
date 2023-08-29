@@ -30,3 +30,25 @@
 // }
 
 
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class TutorService {
+  private baseUrl = 'https://dev.elevate-apis.shikshalokam.org/osl-bap';
+
+  constructor(private http: HttpClient) {}
+
+  searchTutorsByMentorName(name: string): Observable<any> {
+    const url = `${this.baseUrl}/dsep/search`;
+    const body = {
+      mentorName: name,
+      type: 'mentor'
+    };
+    return this.http.post(url, body);
+  }
+}
+

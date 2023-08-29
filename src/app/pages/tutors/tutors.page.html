@@ -11,23 +11,16 @@
 
   <ion-list>
     <!-- Use *ngFor to iterate through tutors and generate items -->
-    <ion-item button *ngFor="let item of tutors" [routerLink]="['/tutor', item.id]">
+    <ion-item button *ngFor="let item of tutors" [routerLink]="['/tutor', item.mentor.id]">
       <ion-avatar slot="start">
-        <img [src]="item.profileImageURL" alt="Tutor Image" />
+        <!-- Use a random image URL from the web as the src attribute -->
+        <img [src]="getRandomImageURL()" alt="Tutor Image" />
       </ion-avatar>
       <div>
-        <h2>{{ item.name }}</h2>
-        <p>{{ item.professionalExperience }}</p>
-        <p>{{ item.qualification }}</p>
+        <h2>{{ item.mentor.name }}</h2>
+        <p>{{ item.mentor.professionalExperience }}</p>
+        <p>{{ item.mentor.qualification }}</p>
       </div>
     </ion-item>
   </ion-list>
-
-  <!-- Commented out infinite scroll for now, as it's not related to routing -->
-  <!-- <ion-infinite-scroll (ionInfinite)="loadMore($event)">
-    <ion-infinite-scroll-content
-      loadingSpinner="bubbles"
-      loadingText="Loading more data..."
-    ></ion-infinite-scroll-content>
-  </ion-infinite-scroll> -->
 </ion-content>
