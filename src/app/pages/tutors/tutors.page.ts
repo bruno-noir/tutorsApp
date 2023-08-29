@@ -189,7 +189,6 @@
 
 // tutors.page.ts
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { TutorService } from '../../services/tutor.service';
 
 @Component({
@@ -198,22 +197,22 @@ import { TutorService } from '../../services/tutor.service';
   styleUrls: ['tutors.page.scss']
 })
 export class TutorsPage {
-  tutors: any[] = []; // Initialize with an empty array
+  tutors: any[] = [];
 
-  constructor(private tutorService: TutorService, private router: Router) {}
+  constructor(private tutorService: TutorService) {}
 
   ionViewDidEnter() {
-    // Fetch initial list of tutors when the page loads
-    this.searchTutors('Helen');
+    const sessionTitle = 'ClusterNumber1'; // Update with the desired sessionTitle
+    this.searchMentorsBySessionTitle(sessionTitle);
   }
 
-  searchTutors(name: string) {
-    this.tutorService.searchTutorsByMentorName(name).subscribe(
+  searchMentorsBySessionTitle(sessionTitle: string) {
+    this.tutorService.searchMentorsBySessionTitle(sessionTitle).subscribe(
       (response) => {
         this.tutors = response.data.mentors;
       },
       (error) => {
-        console.error('Error fetching tutors:', error);
+        console.error('Error fetching mentors:', error);
       }
     );
   }
@@ -230,4 +229,5 @@ export class TutorsPage {
     return imageUrls[randomIndex];
   }
 }
+
 
