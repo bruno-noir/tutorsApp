@@ -54,6 +54,13 @@ export class TutorService {
 
     return this.http.post(url, body, { headers });
   }
+  getTutorDetails(tutorId: string): Observable<any> {
+    const url = `${this.baseUrl}tutors/${tutorId}`; // Adjust the URL based on your API endpoint for tutor details
+
+    const headers = new HttpHeaders().set('Authorization', this.authToken);
+
+    return this.http.get(url, { headers });
+  }
 }
 
 

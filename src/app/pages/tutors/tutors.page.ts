@@ -199,11 +199,13 @@ import { TutorService } from '../../services/tutor.service';
 export class TutorsPage {
   tutors: any[] = [];
 
+
   constructor(private tutorService: TutorService) {}
 
   ionViewDidEnter() {
     const sessionTitle = 'ClusterNumber1'; // Update with the desired sessionTitle
     this.searchMentorsBySessionTitle(sessionTitle);
+
   }
 
   searchMentorsBySessionTitle(sessionTitle: string) {

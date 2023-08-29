@@ -5,7 +5,6 @@ import { TutorDetailsPage } from './pages/tutor-details/tutor-details.page';
 
 
 const routes: Routes = [
-  
   {
     path: '',
     redirectTo: 'tutors',
@@ -16,10 +15,11 @@ const routes: Routes = [
     loadChildren: () => import('./pages/tutors/tutors.module').then( m => m.TutorsPageModule)
   },
   {
-    path: 'tutor/:id',
+    path: 'tutor/:tutorId', // Change ':id' to ':tutorId'
     loadChildren: () => import('./pages/tutor-details/tutor-details.module').then( m => m.TutorDetailsPageModule)
   },
 ];
+
 
 @NgModule({
   imports: [
