@@ -1,22 +1,22 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { TutorsPage } from './pages/tutors/tutors.page';
-import { TutorDetailsPage } from './pages/tutor-details/tutor-details.page';
+import { MentorsPage } from './pages/mentors/mentors.page';
+import { MentorDetailsPage } from './pages/mentor-details/mentor-details.page';
 
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'tutors',
+    redirectTo: 'mentors',
     pathMatch: 'full'
   },
   {
-    path: 'tutors',
-    loadChildren: () => import('./pages/tutors/tutors.module').then( m => m.TutorsPageModule)
+    path: 'mentors',
+    loadChildren: () => import('./pages/mentors/mentors.module').then( m => m.MentorsPageModule)
   },
   {
-    path: 'tutor/:tutorId', // Change ':id' to ':tutorId'
-    loadChildren: () => import('./pages/tutor-details/tutor-details.module').then( m => m.TutorDetailsPageModule)
+    path: 'mentor/:mentorId', // Change ':id' to ':mentorId'
+    loadChildren: () => import('./pages/mentor-details/mentor-details.module').then( m => m.MentorDetailsPageModule)
   },
 ];
 

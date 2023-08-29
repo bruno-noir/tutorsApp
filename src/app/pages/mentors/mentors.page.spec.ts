@@ -1,12 +1,12 @@
 // import { ComponentFixture, TestBed } from '@angular/core/testing';
-// import { TutorsPage } from './tutors.page';
+// import { MentorsPage } from './mentors.page';
 
-// describe('TutorsPage', () => {
-//   let component: TutorsPage;
-//   let fixture: ComponentFixture<TutorsPage>;
+// describe('MentorsPage', () => {
+//   let component: MentorsPage;
+//   let fixture: ComponentFixture<MentorsPage>;
 
 //   beforeEach(async(() => {
-//     fixture = TestBed.createComponent(TutorsPage);
+//     fixture = TestBed.createComponent(MentorsPage);
 //     component = fixture.componentInstance;
 //     fixture.detectChanges();
 //   }));
@@ -16,22 +16,22 @@
 //   });
 // });
 
-// tutors.page.spec.ts
+// mentors.page.spec.ts
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
-import { TutorsPage } from './tutors.page';
+import { MentorsPage } from './mentors.page';
 
-describe('TutorsPage', () => {
-  let component: TutorsPage;
-  let fixture: ComponentFixture<TutorsPage>;
+describe('MentorsPage', () => {
+  let component: MentorsPage;
+  let fixture: ComponentFixture<MentorsPage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [TutorsPage],
+      declarations: [MentorsPage],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(TutorsPage);
+    fixture = TestBed.createComponent(MentorsPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

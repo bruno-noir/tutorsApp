@@ -1,6 +1,6 @@
-import { Tutor } from 'src/app/models/tutor.model'; // Update the path
+import { Mentor } from 'src/app/models/mentor.model'; // Update the path
 
-export const sampleTutor: Tutor[] = [
+export const sampleMentor: Mentor[] = [
 { 
     id : "6480d37d62820fd9e6bf06ef",
     name: "Nathaniel Schuster",
@@ -144,7 +144,7 @@ export const sampleTutor: Tutor[] = [
     specialistIn: "Full-stack Development",
     profileImageURL: getRandomImageURL(),
   },
-  // Add more tutor objects
+  // Add more mentor objects
 
 ];
 

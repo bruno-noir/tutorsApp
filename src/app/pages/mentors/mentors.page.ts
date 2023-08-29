@@ -1,18 +1,18 @@
 // import { HttpClient } from '@angular/common/http';
 // import { Component, OnInit } from '@angular/core';
 // import { InfiniteScrollCustomEvent, LoadingController } from '@ionic/angular';
-// // import { TutorService } from 'src/app/services/tutor.service';
-// import { Tutor } from 'src/app/models/tutor.model';
+// // import { MentorService } from 'src/app/services/mentor.service';
+// import { Mentor } from 'src/app/models/mentor.model';
 //  // Update this path
 
 // @Component({
-//   selector: 'app-tutors',
-//   templateUrl: './tutors.page.html',
-//   styleUrls: ['./tutors.page.scss'],
+//   selector: 'app-mentors',
+//   templateUrl: './mentors.page.html',
+//   styleUrls: ['./mentors.page.scss'],
 // })
-// export class TutorsPage implements OnInit {
+// export class MentorsPage implements OnInit {
 
-//   tutors: Tutor[] = [];
+//   mentors: Mentor[] = [];
 //   isLoading = true; // Initialize loading state
 
 //   constructor(private loadingController: LoadingController) {}
@@ -21,7 +21,7 @@
 //     await this.presentLoading(); // Show loading spinner
 //     // Simulate fetching data from an API
 //     setTimeout(() => {
-//       this.tutors = [
+//       this.mentors = [
 //         { 
 //           id : "6480d37d62820fd9e6bf06ef",
 //           name: "Nathaniel Schuster",
@@ -165,7 +165,7 @@
 //           specialistIn: "Full-stack Development",
 //           profileImageURL: this.getRandomImageURL(),
 //         },
-//         // Add more tutor objects
+//         // Add more mentor objects
 //       ];
       
 //       this.isLoading = false; // Hide loading spinner
@@ -179,7 +179,7 @@
 
 //   async presentLoading() {
 //     const loading = await this.loadingController.create({
-//       message: 'Loading tutors...',
+//       message: 'Loading mentors...',
 //       duration: 2000, // Optional: Set a maximum duration for the loading spinner
 //     });
 //     await loading.present();
@@ -187,20 +187,20 @@
 
 // }
 
-// tutors.page.ts
+// mentors.page.ts
 import { Component } from '@angular/core';
-import { TutorService } from '../../services/tutor.service';
+import { MentorService } from '../../services/mentor.service';
 
 @Component({
-  selector: 'app-tutors',
-  templateUrl: 'tutors.page.html',
-  styleUrls: ['tutors.page.scss']
+  selector: 'app-mentors',
+  templateUrl: 'mentors.page.html',
+  styleUrls: ['mentors.page.scss']
 })
-export class TutorsPage {
-  tutors: any[] = [];
+export class MentorsPage {
+  mentors: any[] = [];
 
 
-  constructor(private tutorService: TutorService) {}
+  constructor(private mentorService: MentorService) {}
 
   ionViewDidEnter() {
     const sessionTitle = 'ClusterNumber1'; // Update with the desired sessionTitle
@@ -208,15 +208,14 @@ export class TutorsPage {
 
   }
 
-  searchMentorsBySessionTitle(sessionTitle: string) {
-    this.tutorService.searchMentorsBySessionTitle(sessionTitle).subscribe(
-      (response) => {
-        this.tutors = response.data.mentors;
-      },
-      (error) => {
-        console.error('Error fetching mentors:', error);
-      }
-    );
+   searchMentorsBySessionTitle(sessionTitle: string) {
+    this.mentorService.searchMentorsBySessionTitle(sessionTitle).subscribe(
+      (resp) => {
+      this.mentors = resp
+      console.log(`Mentors : ${this.mentors}`)
+    }, (error) => {
+      console.log('Error fetching data');
+    })
   }
 
   getRandomImageURL(): string {
@@ -230,6 +229,7 @@ export class TutorsPage {
     const randomIndex = Math.floor(Math.random() * imageUrls.length);
     return imageUrls[randomIndex];
   }
+
 }
 
 

@@ -1,4 +1,4 @@
-export interface Tutor {
+export interface Mentor {
     id?: string;
     name: string;
     aboutMentor: string;

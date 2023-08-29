@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 
-import { TutorsPage } from './tutors.page';
+import { MentorsPage } from './mentors.page';
 
 @NgModule({
   imports: [
@@ -12,10 +12,10 @@ import { TutorsPage } from './tutors.page';
     RouterModule.forChild([
       {
         path: '',
-        component: TutorsPage
+        component: MentorsPage
       }
     ])
   ],
-  declarations: [TutorsPage]
+  declarations: [MentorsPage]
 })
-export class TutorsPageModule {}
+export class MentorsPageModule {}

@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>tutors</ion-title>
+    <ion-title>mentors</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -10,11 +10,11 @@
   </div>
 
   <ion-list>
-    <!-- Use *ngFor to iterate through tutors and generate items -->
-    <ion-item button *ngFor="let item of tutors" [routerLink]="['/tutor', item.mentor.id]">
+    <!-- Use *ngFor to iterate through mentors and generate items -->
+    <ion-item button *ngFor="let item of mentors" [routerLink]="['/mentor', item.mentor.id]">
       <ion-avatar slot="start">
         <!-- Use a random image URL from the web as the src attribute -->
-        <img [src]="getRandomImageURL()" alt="Tutor Image" />
+        <img [src]="getRandomImageURL()" alt="Mentor Image" />
       </ion-avatar>
       <div>
         <h2>{{ item.mentor.name }}</h2>
