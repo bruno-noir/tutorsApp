@@ -2,6 +2,9 @@
 import { Component } from '@angular/core';
 import { MentorService } from '../../services/mentor.service';
 import { LoadingController } from '@ionic/angular';
+import { MD5 } from 'crypto-js';
+
+
 
 @Component({
   selector: 'app-mentors',
@@ -70,13 +73,18 @@ export class MentorsPage {
   }
 
   getRandomImageURL(): string {
-    const imageUrls = [
-      'https://loremflickr.com/640/480/abstract?random=1',
-      'https://loremflickr.com/640/480/abstract?random=2',
-      // ... add more URLs here
-    ];
-
-    const randomIndex = Math.floor(Math.random() * imageUrls.length);
-    return imageUrls[randomIndex];
+    // Generate a random email address for Gravatar
+    const randomEmail = `${Math.random()
+      .toString(36)
+      .substring(7)}@example.com`;
+  
+    // Calculate the MD5 hash of the random email address
+    const hash = MD5(randomEmail.trim().toLowerCase());
+  
+    // Construct the Gravatar URL
+    const gravatarUrl = `https://www.gravatar.com/avatar/${hash.toString()}?s=200&d=identicon`;
+  
+    return gravatarUrl;
   }
+  
 }
