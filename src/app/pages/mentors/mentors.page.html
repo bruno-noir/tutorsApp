@@ -6,9 +6,15 @@
 
 <ion-content>
   <div class="top-section">
-    <button class="filter-button">Select Filter</button>
+    <ion-item>
+      <ion-select (ionChange)="onSessionTitleChange($event)" placeholder="Select a Session Title">
+        <ion-select-option *ngFor="let title of sessionTitles" [value]="title.title">
+          {{ title.title }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
   </div>
-
+  
   <ion-list>
     <!-- Use *ngFor to iterate through mentors and generate items -->
     <ion-item button *ngFor="let item of mentors" [routerLink]="['/mentor', item.mentor.id]">

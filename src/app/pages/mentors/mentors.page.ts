@@ -1,195 +1,7 @@
-// import { HttpClient } from '@angular/common/http';
-// import { Component, OnInit } from '@angular/core';
-// import { InfiniteScrollCustomEvent, LoadingController } from '@ionic/angular';
-// // import { MentorService } from 'src/app/services/mentor.service';
-// import { Mentor } from 'src/app/models/mentor.model';
-//  // Update this path
 
-// @Component({
-//   selector: 'app-mentors',
-//   templateUrl: './mentors.page.html',
-//   styleUrls: ['./mentors.page.scss'],
-// })
-// export class MentorsPage implements OnInit {
-
-//   mentors: Mentor[] = [];
-//   isLoading = true; // Initialize loading state
-
-//   constructor(private loadingController: LoadingController) {}
-
-//   async ngOnInit() {
-//     await this.presentLoading(); // Show loading spinner
-//     // Simulate fetching data from an API
-//     setTimeout(() => {
-//       this.mentors = [
-//         { 
-//           id : "6480d37d62820fd9e6bf06ef",
-//           name: "Nathaniel Schuster",
-//           aboutMentor: "A true master of their craft, this mentor has spent decades honing their skills and building their knowledge base. They are a sought-after consultant and advisor, known for their ability to tackle even the most difficult challenges with ease. Despite their impressive credentials, they are warm and approachable, always happy to help those who are eager to learn.",
-//           professionalExperience: "Principal Engineer | Product Development Lead - NexGen Innovations",
-//           qualification: "M.Tech from BITS Pilani",
-//           experience: "27 Years",
-//           totalMeetings: "109+",
-//           specialistIn: "DevOps",
-//           profileImageURL: this.getRandomImageURL(),
-//         },
-//         {
-//           id : "6480d37d62820fd9e6bf06df",
-//           name: "Jane Doe",
-//           aboutMentor: "Experienced software developer with a passion for coding...",
-//           professionalExperience: "Senior Software Engineer - TechCorp",
-//           qualification: "B.Sc. in Computer Science",
-//           experience: "10 Years",
-//           totalMeetings: "75+",
-//           specialistIn: "Front-end Development",
-//           profileImageURL: this.getRandomImageURL(),
-//         },
-//         {
-//           id : "6480d37d62820fd9e6bf06ez",
-//           name: "John Smith",
-//           aboutMentor: "Passionate data scientist with a track record of solving complex problems...",
-//           professionalExperience: "Data Scientist - Data Insights",
-//           qualification: "Ph.D. in Statistics",
-//           experience: "15 Years",
-//           totalMeetings: "90+",
-//           specialistIn: "Machine Learning",
-//           profileImageURL: this.getRandomImageURL(),
-//         },
-//         {
-//           id : "6480d37d62820fd9e6bf06xy",
-//           name: "Emily Johnson",
-//           aboutMentor: "Creative UX/UI designer known for transforming ideas into user-friendly designs...",
-//           professionalExperience: "UX/UI Designer - Creative Studios",
-//           qualification: "B.Des in Visual Communication",
-//           experience: "8 Years",
-//           totalMeetings: "50+",
-//           specialistIn: "User Experience Design",
-//           profileImageURL: this.getRandomImageURL(),
-//         },
-//         {
-//           id : "6480d37d62820fd9e6bf06vw",
-//           name: "Alex Martin",
-//           aboutMentor: "Experienced software engineer with a knack for problem-solving...",
-//           professionalExperience: "Software Engineer - InnovateTech",
-//           qualification: "M.Sc. in Computer Science",
-//           experience: "12 Years",
-//           totalMeetings: "80+",
-//           specialistIn: "Full-stack Development",
-//           profileImageURL: this.getRandomImageURL(),
-//         },
-//         {
-//           id : "6480d37d62820fd9e6bf06tu",
-//           name: "Jane Doe",
-//           aboutMentor: "Experienced software developer with a passion for coding...",
-//           professionalExperience: "Senior Software Engineer - TechCorp",
-//           qualification: "B.Sc. in Computer Science",
-//           experience: "10 Years",
-//           totalMeetings: "75+",
-//           specialistIn: "Front-end Development",
-//           profileImageURL: this.getRandomImageURL(),
-//         },
-//         {
-//           id : "6480d37d62820fd9e6bf06rs",
-//           name: "John Smith",
-//           aboutMentor: "Passionate data scientist with a track record of solving complex problems...",
-//           professionalExperience: "Data Scientist - Data Insights",
-//           qualification: "Ph.D. in Statistics",
-//           experience: "15 Years",
-//           totalMeetings: "90+",
-//           specialistIn: "Machine Learning",
-//           profileImageURL: this.getRandomImageURL(),
-//         },
-//         {
-//           id : "6480d37d62820fd9e6bf06pq",
-//           name: "Emily Johnson",
-//           aboutMentor: "Creative UX/UI designer known for transforming ideas into user-friendly designs...",
-//           professionalExperience: "UX/UI Designer - Creative Studios",
-//           qualification: "B.Des in Visual Communication",
-//           experience: "8 Years",
-//           totalMeetings: "50+",
-//           specialistIn: "User Experience Design",
-//           profileImageURL: this.getRandomImageURL(),
-//         },
-//         {
-//           id : "6480d37d62820fd9e6bf06no",
-//           name: "Alex Martin",
-//           aboutMentor: "Experienced software engineer with a knack for problem-solving...",
-//           professionalExperience: "Software Engineer - InnovateTech",
-//           qualification: "M.Sc. in Computer Science",
-//           experience: "12 Years",
-//           totalMeetings: "80+",
-//           specialistIn: "Full-stack Development",
-//           profileImageURL: this.getRandomImageURL(),
-//         },
-//         {
-//           id : "6480d37d62820fd9e6bf06lm",
-//           name: "Jane Doe",
-//           aboutMentor: "Experienced software developer with a passion for coding...",
-//           professionalExperience: "Senior Software Engineer - TechCorp",
-//           qualification: "B.Sc. in Computer Science",
-//           experience: "10 Years",
-//           totalMeetings: "75+",
-//           specialistIn: "Front-end Development",
-//           profileImageURL: this.getRandomImageURL(),
-//         },
-//         {
-//           id : "6480d37d62820fd9e6bf06jk",
-//           name: "John Smith",
-//           aboutMentor: "Passionate data scientist with a track record of solving complex problems...",
-//           professionalExperience: "Data Scientist - Data Insights",
-//           qualification: "Ph.D. in Statistics",
-//           experience: "15 Years",
-//           totalMeetings: "90+",
-//           specialistIn: "Machine Learning",
-//           profileImageURL: this.getRandomImageURL(),
-//         },
-//         {
-//           id : "6480d37d62820fd9e6bf06hi",
-//           name: "Emily Johnson",
-//           aboutMentor: "Creative UX/UI designer known for transforming ideas into user-friendly designs...",
-//           professionalExperience: "UX/UI Designer - Creative Studios",
-//           qualification: "B.Des in Visual Communication",
-//           experience: "8 Years",
-//           totalMeetings: "50+",
-//           specialistIn: "User Experience Design",
-//           profileImageURL: this.getRandomImageURL(),
-//         },
-//         {
-//           id : "6480d37d62820fd9e6bf06gh",
-//           name: "Alex Martin",
-//           aboutMentor: "Experienced software engineer with a knack for problem-solving...",
-//           professionalExperience: "Software Engineer - InnovateTech",
-//           qualification: "M.Sc. in Computer Science",
-//           experience: "12 Years",
-//           totalMeetings: "80+",
-//           specialistIn: "Full-stack Development",
-//           profileImageURL: this.getRandomImageURL(),
-//         },
-//         // Add more mentor objects
-//       ];
-      
-//       this.isLoading = false; // Hide loading spinner
-//     }, 2000); // Simulated delay of 2 seconds
-//   }
-  
-//   getRandomImageURL(): string {
-//     const imageId = Math.floor(Math.random() * 1000); // Generate a random image ID
-//     return `https://picsum.photos/200/200?image=${imageId}`;
-//   }
-
-//   async presentLoading() {
-//     const loading = await this.loadingController.create({
-//       message: 'Loading mentors...',
-//       duration: 2000, // Optional: Set a maximum duration for the loading spinner
-//     });
-//     await loading.present();
-//   }
-
-// }
-
-// mentors.page.ts
 import { Component } from '@angular/core';
 import { MentorService } from '../../services/mentor.service';
+import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-mentors',
@@ -198,28 +10,66 @@ import { MentorService } from '../../services/mentor.service';
 })
 export class MentorsPage {
   mentors: any[] = [];
+  sessionTitles: { title: string; checked: boolean }[] = [
+    { title: 'ClusterNumber1', checked: false },
+    { title: 'ClusterNumber2', checked: false },
+    { title: 'ClusterNumber3', checked: false },
+    { title: 'ClusterNumber4', checked: false },
+    { title: 'ClusterNumber5', checked: false },
+    { title: 'ClusterNumber6', checked: false },
+    { title: 'ClusterNumber7', checked: false },
+    { title: 'ClusterNumber8', checked: false },
+    { title: 'ClusterNumber9', checked: false },
+  ];
+  private loader: HTMLIonLoadingElement | null = null;
 
+  constructor(
+    private mentorService: MentorService,
+    private loadingController: LoadingController
+  ) {}
 
-  constructor(private mentorService: MentorService) {}
-
-  ionViewDidEnter() {
-    const sessionTitle = 'ClusterNumber1'; // Update with the desired sessionTitle
-    this.searchMentorsBySessionTitle(sessionTitle);
-
+  async presentLoading() {
+    this.loader = await this.loadingController.create({
+      message: 'Fetching mentors...',
+    });
+    await this.loader.present();
   }
 
-   searchMentorsBySessionTitle(sessionTitle: string) {
-    this.mentorService.searchMentorsBySessionTitle(sessionTitle).subscribe(
-      (resp) => {
-      this.mentors = resp
-      console.log(`Mentors : ${this.mentors}`)
-    }, (error) => {
-      console.log('Error fetching data');
-    })
+  async dismissLoading() {
+    if (this.loader) {
+      await this.loader.dismiss();
+      this.loader = null;
+    }
+  }
+
+  onSessionTitleChange(event: any) {
+    const selectedSessionTitle = event.detail.value;
+    this.searchMentorsBySelectedSessionTitle(selectedSessionTitle);
+  }
+
+  async searchMentorsBySelectedSessionTitle(sessionTitle: string) {
+    if (!sessionTitle) {
+      this.mentors = []; // Clear mentors if no session title selected
+      return;
+    }
+
+    try {
+      this.presentLoading();
+      const resp = await this.mentorService.searchMentorsBySessionTitle(sessionTitle).toPromise();
+      if (resp) { // Check if resp is not undefined
+        this.mentors = resp;
+        console.log(`Mentors for ${sessionTitle}:`, resp);
+      } else {
+        console.log(`No mentors found for ${sessionTitle}`);
+      }
+    } catch (error) {
+      console.log(`Error fetching mentors for ${sessionTitle}:`, error);
+    } finally {
+      this.dismissLoading();
+    }
   }
 
   getRandomImageURL(): string {
-    // Replace this with an array of image URLs or a random image API
     const imageUrls = [
       'https://loremflickr.com/640/480/abstract?random=1',
       'https://loremflickr.com/640/480/abstract?random=2',
@@ -229,7 +79,4 @@ export class MentorsPage {
     const randomIndex = Math.floor(Math.random() * imageUrls.length);
     return imageUrls[randomIndex];
   }
-
 }
-
-
