@@ -12,6 +12,7 @@ export class MentorDetailsPage implements OnInit {
 
   mentors: any[] = []; // Initialize as an empty object
   mentor: any
+  slots: any[] = []
 
   constructor(private route: ActivatedRoute, private mentorService: MentorService) {}
 
@@ -24,6 +25,8 @@ export class MentorDetailsPage implements OnInit {
     // console.log(`Mentors : ${JSON.stringify(this.mentors)}`)
     let res = this.mentors.find(i => i.mentor.id === mentorId)
     this.mentor = res.mentor
+    this.slots = res.slots
+    console.log(res)
   }
 }
 

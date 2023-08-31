@@ -7,9 +7,25 @@
 <ion-content>
   <div class="top-section">
     <ion-item>
-      <ion-select (ionChange)="onSessionTitleChange($event)" placeholder="Select a Session Title">
-        <ion-select-option *ngFor="let title of sessionTitles" [value]="title.title">
-          {{ title.title }}
+      <ion-select (ionChange)="onClassChange($event)" placeholder="Class">
+        <ion-select-option *ngFor="let classOption of classes" [value]="classOption">
+          {{ classOption }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-select (ionChange)="onSubjectChange($event)" placeholder="Subject">
+        <ion-select-option *ngFor="let subjectOption of subjects" [value]="subjectOption">
+          {{ subjectOption }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-select (ionChange)="onLanguageChange($event)" placeholder="Medium">
+        <ion-select-option *ngFor="let languageOption of languageOptions" [value]="languageOption">
+          {{ languageOption }}
         </ion-select-option>
       </ion-select>
     </ion-item>

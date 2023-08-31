@@ -16,12 +16,12 @@ export class MentorService {
 
   constructor(private http: HttpClient) {}
 
-   searchMentorsBySessionTitle(sessionTitle: string): Observable<any[]> {
+  searchMentorsByCriteria(criteria: string): Observable<any[]> {
     const url = `${this.baseUrl}search`;
 
     const headers = new HttpHeaders().set('Authorization', this.authToken);
     const body = {
-      sessionTitle: sessionTitle,
+      sessionTitle: criteria, // Use criteria as sessionTitle
       type: 'mentor'
     };
 
@@ -34,7 +34,7 @@ export class MentorService {
         console.error('Error fetching mentors:', error);
         throw error; // Rethrow the error to propagate it to the caller
       })
-    )
+    );
   }
 
   getMentorDetails(mentorId: string): Observable<any> {
